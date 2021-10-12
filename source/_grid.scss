@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+.row-start {
+    justify-content: start;
+}
+.row-center {
+    justify-content: center;
+}
+.row-end {
+    justify-content: end;
+}
+.row-space-between {
+    justify-content: space-between;
+}
+.col-center {
+    align-items: center;
+}
+.col-f {
+    flex: 1;
+}
+@for $i from 1 through 12 {
+    .col-#{$i} {
+        width: percentage($i/12);
+    }
+}
+$gaps: 15, 30, 50;
+@each $gap in $gaps {
+    .gap-#{$gap} {
+        gap: #{$gap}px;
+    }
+}
